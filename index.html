@@ -1,0 +1,64 @@
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+
+    <style media="screen">
+        .countdown {
+            text-align: center;
+            margin: auto;
+            width: 50%;
+        }
+
+        .bt {
+            /* display: inline-block; */
+            /* height: 30px; */
+            /* width: 30px; */
+            border-radius: 25px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            /* vertical-align: middle; */
+            padding: 1.5rem 1.5rem;
+            font-size: 3rem;
+        }
+
+        .bt:hover {
+            cursor: pointer;
+        }
+
+        .disabled {
+            pointer-events: none;
+            cursor: default;
+            opacity: 0.6;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="countdown">
+        <h1>? ??:??:??</h1>
+
+        <a href="#" class="bt disbled">Dárek</a>
+    </div>
+
+    <script type="text/javascript">
+        const countdownDiv = document.querySelector(".countdown h1")
+        setInterval(function() {
+            const dayD = new Date(2021, 1, 13, 16)
+            const diff = dayD - new Date()
+            countdownDiv.innerText = Math.round(diff / 86400000) + " " + new Date(diff).toLocaleTimeString()
+        }, 1000)
+    </script>
+
+</body>
+
+</html>
