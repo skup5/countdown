@@ -6,22 +6,36 @@
     <title>Countdown</title>
 
     <style media="screen">
+        body {
+            background: rgb(252, 70, 114);
+            background: radial-gradient(circle, rgb(252, 70, 114) 0%, rgba(250, 0, 0, 1) 100%);
+            color: white;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 4rem 0;
+        }
+
+        .content {
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
         .countdown {
             text-align: center;
-            margin: auto;
-            width: 50%;
         }
 
         .bt {
-            /* display: inline-block; */
-            /* height: 30px; */
-            /* width: 30px; */
+            border: white solid 1px;
             border-radius: 25px;
-            background-color: red;
+            background-color: rgba(255, 0, 0, 0.5);
             color: white;
             text-decoration: none;
             text-align: center;
-            /* vertical-align: middle; */
             padding: 1.5rem 1.5rem;
             font-size: 3rem;
         }
@@ -36,18 +50,48 @@
             opacity: 0.6;
         }
 
-        h1 {
-            font-size: 4rem;
-            margin: 4rem;
+
+        .heart {
+            background-color: red;
+            display: inline-block;
+            height: 30px;
+            margin: 0 10px;
+            position: relative;
+            top: 0;
+            transform: rotate(-45deg);
+            width: 30px;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            height: 30px;
+            position: absolute;
+            width: 30px;
+        }
+
+        .heart:before {
+            top: -15px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 15px;
+            top: 0;
         }
     </style>
 </head>
 
 <body>
-    <div class="countdown">
-        <h1>? ??:??:??</h1>
+    <div class="content">
 
-        <a href="#" class="bt disbled">Dárek</a>
+        <div class="countdown">
+            <h1>? ??:??:??</h1>
+
+            <a href="#" class="bt disabled">Dárek</a>
+        </div>
     </div>
 
     <script type="text/javascript">
