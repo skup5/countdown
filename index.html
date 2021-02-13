@@ -104,6 +104,7 @@
                 document.querySelector("a.bt").classList.remove("disabled")
             } else {
                 countdownDiv.innerText = Math.floor(diff / 86400000) + " " + new Date(diff).toLocaleTimeString()
+                document.querySelector("a").classList.add("disabled")
             }
         }, 1000)
     </script>
