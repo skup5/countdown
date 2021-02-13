@@ -97,8 +97,8 @@
     <script type="text/javascript">
         const countdownDiv = document.querySelector(".countdown h1")
         setInterval(function() {
-            const dayD = new Date(2021, 1, 13, 16)
-            const diff = dayD - new Date()
+            const dayD = new Date(2021, 1, 13, 19)
+            const diff = Math.abs(dayD - new Date())
             countdownDiv.innerText = Math.floor(diff / 86400000) + " " + new Date(diff).toLocaleTimeString()
         }, 1000)
     </script>
