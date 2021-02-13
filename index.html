@@ -90,7 +90,7 @@
         <div class="countdown">
             <h1>? ??:??:??</h1>
 
-            <a href="#" class="bt disabled">Dárek</a>
+            <a href="/nosj" class="bt disabled">Dárek</a>
         </div>
     </div>
 
@@ -98,8 +98,13 @@
         const countdownDiv = document.querySelector(".countdown h1")
         setInterval(function() {
             const dayD = new Date(2021, 1, 13, 19)
-            const diff = Math.abs(dayD - new Date())
-            countdownDiv.innerText = Math.floor(diff / 86400000) + " " + new Date(diff).toLocaleTimeString()
+            const diff = dayD - new Date()
+            if (diff <= 0) {
+                countdownDiv.innerText = "0 00:00:00"
+                document.querySelector("a.bt").classList.remove("disabled")
+            } else {
+                countdownDiv.innerText = Math.floor(diff / 86400000) + " " + new Date(diff).toLocaleTimeString()
+            }
         }, 1000)
     </script>
 
